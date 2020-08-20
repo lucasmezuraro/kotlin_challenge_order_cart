@@ -1,10 +1,10 @@
 import challenge.*
 
 fun main(args : Array<String>) {
-    val shirt = Product("Flowered t-shirt", ProductType.PHYSICAL, 35.00)
-    val netflix = Product("Familiar plan", ProductType.MEMBERSHIP, 29.90)
-    val book = Product("The Hitchhiker's Guide to the Galaxy", ProductType.BOOK, 120.00)
-    val music = Product("Stairway to Heaven", ProductType.DIGITAL, 5.00)
+    val shirt = Product("Flowered t-shirt", ProductType.PHYSICAL, true, 35.00)
+    val netflix = Product("Familiar plan", ProductType.MEMBERSHIP, false, 29.90)
+    val book = Product("The Hitchhiker's Guide to the Galaxy",ProductType.BOOK, true, 120.00)
+    val music = Product("Stairway to Heaven", ProductType.DIGITAL, false, 5.00)
 
     val order = Order(Customer(), Address())
 

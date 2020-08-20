@@ -8,3 +8,4 @@ data class Payment(val order: Order, val paymentMethod: PaymentMethod) {
     val amount = order.totalAmount
     val invoice = Invoice(order)
 }
+
