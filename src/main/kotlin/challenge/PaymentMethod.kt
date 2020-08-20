@@ -1,0 +1,5 @@
+package challenge
+
+interface PaymentMethod {
+
+}
