@@ -1,10 +1,12 @@
 import challenge.*
+import challenge.treatments.FinancialBenefits
+import challenge.treatments.ShippingPreparation
 
 fun main(args : Array<String>) {
-    val shirt = Product("Flowered t-shirt", ProductType.PHYSICAL, true, 35.00)
-    val netflix = Product("Familiar plan", ProductType.MEMBERSHIP, false, 29.90)
-    val book = Product("The Hitchhiker's Guide to the Galaxy",ProductType.BOOK, true, 120.00)
-    val music = Product("Stairway to Heaven", ProductType.DIGITAL, false, 5.00)
+    val shirt = Product("Flowered t-shirt", ProductType.PHYSICAL, true, false, 35.00)
+    val netflix = Product("Familiar plan", ProductType.MEMBERSHIP, false, false, 29.90)
+    val book = Product("The Hitchhiker's Guide to the Galaxy",ProductType.BOOK, true, true, 120.00)
+    val music = Product("Stairway to Heaven", ProductType.DIGITAL, false, false, 5.00)
 
     val order = Order(Customer(), Address())
 
@@ -13,6 +15,7 @@ fun main(args : Array<String>) {
     order.addProduct(book, 1)
     order.addProduct(music, 1)
 
-    order.pay(CreditCard("43567890-987654367"))
-    // now, how to deal with shipping rules then?
+    FinancialBenefits(order).check()
+    OrderPayment(order,CreditCard("43567890-987654367")).pay()
+    ShippingPreparation(order).prepare()
 }
